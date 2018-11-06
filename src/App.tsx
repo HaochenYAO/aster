@@ -1,4 +1,7 @@
 import * as React from "react";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from 'react-responsive-carousel';
+
 import YBNavbar from "./components/YBNavbar";
 import YBHero from "./components/YBHero";
 import YBCardLayout from "./components/YBCardLayout";
@@ -18,6 +21,20 @@ class App extends React.Component {
       <React.Fragment>
         <YBNavbar />
         <YBHero />
+        <Carousel transitionTime={500} infiniteLoop={true} autoPlay={true}>
+          <div>
+            <img src="/img/carousel/1.jpg" />
+            <p className="legend">LA</p>
+          </div>
+          <div>
+            <img src="/img/carousel/2.jpg" />
+            <p className="legend">Chicago</p>
+          </div>
+          <div>
+            <img src="/img/carousel/3.jpg" />
+            <p className="legend">NY</p>
+          </div>
+        </Carousel>
         <YBCardLayout cards={cards}/>
         <YBFooter />
       </React.Fragment>
