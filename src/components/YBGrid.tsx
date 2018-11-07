@@ -40,9 +40,7 @@ class YBGrid extends React.Component<WithStyles<typeof styles>, IState> {
     return (
       <React.Fragment>
         <CssBaseline />
-        {/* Hero unit */}
         <div className={classNames(classes.layout, classes.cardGrid)}>
-          {/* End hero unit */}
           <Grid container={true} spacing={40}>
             {cards.map(card => (
               <Grid item={true} key={card} sm={6} md={4} lg={3} />

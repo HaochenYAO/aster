@@ -2,15 +2,15 @@ import * as React from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 
-import YBNavbar from "./components/YBNavbar";
-import YBHero from "./components/YBHero";
-import YBCardLayout from "./components/YBCardLayout";
-import YBFooter from "./components/YBFooter";
+import YBNavbar from "../../components/navbar/YBNavbar";
+import YBHero from "../../components/YBHero";
+import YBCardLayout from "../../components/YBCardLayout";
+import YBFooter from "../../components/YBFooter";
 
-import { MCard } from "./models/MCard";
-import { MHyper } from "./models/MHyper";
+import { MCard } from "../../models/MCard";
+import { MHyper } from "../../models/MHyper";
 
-class App extends React.Component {
+class Welcome extends React.Component {
   public render() {
     const cardPile = new MCard(1, '/img/pile.jpg', '电池', '喻柏电池', new MHyper('目录', ''), new MHyper('文档', ''), 'test');
     const cardLCD = new MCard(2, '/img/lcd.jpg', '液晶', '喻柏液晶', new MHyper('目录', ''), new MHyper('文档', ''), 'test');
@@ -42,4 +42,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default Welcome;

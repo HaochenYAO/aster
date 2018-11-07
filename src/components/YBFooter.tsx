@@ -4,6 +4,8 @@ import Typography from "@material-ui/core/Typography";
 import { Theme } from "@material-ui/core/styles/createMuiTheme";
 import createStyles from "@material-ui/core/styles/createStyles";
 import withStyles, { WithStyles } from "@material-ui/core/styles/withStyles";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBuilding ,faPhone, faMailBulk } from '@fortawesome/free-solid-svg-icons'
 import withRoot from "../withRoot";
 
 const styles = (theme: Theme) =>
@@ -42,8 +44,23 @@ class YBNavbar extends React.Component<WithStyles<typeof styles>, IState> {
             color="textSecondary"
             component="p"
           >
-            电话: 13901840320
-            邮箱: xxx@yyy.com
+            <FontAwesomeIcon icon={faPhone} /> - 13901840320
+          </Typography>
+          <Typography
+            variant="subtitle1"
+            align="left"
+            color="textSecondary"
+            component="p"
+          >
+            <FontAwesomeIcon icon={faMailBulk} /> - yubaidz@163.com
+          </Typography>
+          <Typography
+            variant="subtitle1"
+            align="left"
+            color="textSecondary"
+            component="p"
+          >
+            <FontAwesomeIcon icon={faBuilding} /> - 上海宝山区共和新路4965号4号楼1309室
           </Typography>
         </footer>
         {/* End footer */}
