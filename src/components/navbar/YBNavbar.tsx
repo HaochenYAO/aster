@@ -1,13 +1,14 @@
 import * as React from "react";
 import AppBar from "@material-ui/core/AppBar";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import { IconButton, Menu, MenuItem, Toolbar } from "@material-ui/core";
-import { AccountCircle } from "@material-ui/icons";
+import { Button, IconButton, Menu, MenuItem, Toolbar } from "@material-ui/core";
+import { List } from "@material-ui/icons";
 // import Typography from "@material-ui/core/Typography";
 import { Theme } from "@material-ui/core/styles/createMuiTheme";
 import createStyles from "@material-ui/core/styles/createStyles";
 import withStyles, { WithStyles } from "@material-ui/core/styles/withStyles";
 import withRoot from "../../withRoot";
+import "./YBNavbar.css";
 
 const styles = (theme: Theme) =>
   createStyles({
@@ -23,9 +24,10 @@ const styles = (theme: Theme) =>
       alignItems: "center",
       justifyContent: "space-between"
     },
-    navbar: {
+    menuButton: {
       color: "white",
-      "font-weight": "10px"
+      "font-weight": 600,
+      "font-size": "15px"
     }
   });
 
@@ -56,47 +58,40 @@ class YBNavbar extends React.Component<WithStyles<typeof styles>, IState> {
         <CssBaseline />
         <AppBar position="static" className={classes.appBar}>
           <Toolbar className={classes.toolbar}>
-            <img src="/img/logo.jpg" width="120" />
-            <div>
-              {/* <ul className={classes.navbar}>
-                <li>
-                  <a href="#home">首页</a>
-                </li>
-                <li>
-                  <a href="#about">产品</a>
-                </li>
-                <li>
-                  <a href="#services">企业介绍</a>
-                </li>
-                <li>
-                  <a href="#contact">资料下载</a>
-                </li>
-              </ul> */}
-              <IconButton
-                aria-owns={open ? "menu-appbar" : undefined}
-                aria-haspopup="true"
-                onClick={this.handleMenu}
-                color="inherit"
-              >
-                <AccountCircle />
-              </IconButton>
-              <Menu
-                id="menu-appbar"
-                anchorEl={anchorEl}
-                anchorOrigin={{
-                  vertical: "top",
-                  horizontal: "right"
-                }}
-                transformOrigin={{
-                  vertical: "top",
-                  horizontal: "right"
-                }}
-                open={open}
-                onClose={this.handleClose}
-              >
-                <MenuItem onClick={this.handleClose}>Profile</MenuItem>
-                <MenuItem onClick={this.handleClose}>My account</MenuItem>
-              </Menu>
+            <IconButton
+              aria-owns={open ? "menu-appbar" : undefined}
+              aria-haspopup="true"
+              onClick={this.handleMenu}
+              color="inherit"
+              className="menuIcon"
+            >
+              <List />
+            </IconButton>
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorEl}
+              anchorOrigin={{
+                vertical: "top",
+                horizontal: "right"
+              }}
+              transformOrigin={{
+                vertical: "top",
+                horizontal: "right"
+              }}
+              open={open}
+              onClose={this.handleClose}
+            >
+              <MenuItem onClick={this.handleClose}>首页</MenuItem>
+              <MenuItem onClick={this.handleClose}>产品</MenuItem>
+              <MenuItem onClick={this.handleClose}>企业介绍</MenuItem>
+              <MenuItem onClick={this.handleClose}>资料下载</MenuItem>
+            </Menu>
+
+            <div className="menuItem">
+              <Button className={classes.menuButton}>首页</Button>
+              <Button className={classes.menuButton}>产品</Button>
+              <Button className={classes.menuButton}>企业介绍</Button>
+              <Button className={classes.menuButton}>资料下载</Button>
             </div>
           </Toolbar>
         </AppBar>

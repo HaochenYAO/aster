@@ -1,0 +1,14 @@
+$break-small: 640px;
+$break-large: 1200px;
+
+.menuIcon {
+  @media screen and (min-width: $break-small) {
+    visibility: hidden;
+  }
+}
+
+.menuItem {
+  @media screen and (max-width: $break-small) {
+    display: none;
+  }
+}
