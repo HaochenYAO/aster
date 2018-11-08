@@ -5,7 +5,7 @@ import { Theme } from "@material-ui/core/styles/createMuiTheme";
 import createStyles from "@material-ui/core/styles/createStyles";
 import withStyles, { WithStyles } from "@material-ui/core/styles/withStyles";
 import withRoot from "../withRoot";
-import { Grid } from '@material-ui/core';
+import Grid from '@material-ui/core/Grid';
 import { MCard} from '../models/MCard';
 import YBCard from './YBCard';
 

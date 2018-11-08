@@ -4,8 +4,10 @@ import Typography from "@material-ui/core/Typography";
 import { Theme } from "@material-ui/core/styles/createMuiTheme";
 import createStyles from "@material-ui/core/styles/createStyles";
 import withStyles, { WithStyles } from "@material-ui/core/styles/withStyles";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBuilding ,faPhone, faMailBulk } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import * as faBuilding from '@fortawesome/free-solid-svg-icons/faBuilding';
+import * as faPhone from '@fortawesome/free-solid-svg-icons/faPhone'
+import * as faMailBulk from '@fortawesome/free-solid-svg-icons/faMailBulk'
 import withRoot from "../withRoot";
 
 const styles = (theme: Theme) =>
