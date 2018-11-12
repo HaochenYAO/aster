@@ -4,10 +4,6 @@ import registerServiceWorker from "./registerServiceWorker";
 
 import Routes from "./routers/Routes";
 import { BrowserRouter } from "react-router-dom";
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { faStroopwafel } from "@fortawesome/free-solid-svg-icons";
-
-library.add(faStroopwafel);
 
 ReactDOM.render(
   <BrowserRouter>

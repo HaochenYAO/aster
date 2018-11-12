@@ -4,10 +4,9 @@ import Typography from "@material-ui/core/Typography";
 import { Theme } from "@material-ui/core/styles/createMuiTheme";
 import createStyles from "@material-ui/core/styles/createStyles";
 import withStyles, { WithStyles } from "@material-ui/core/styles/withStyles";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import * as faBuilding from '@fortawesome/free-solid-svg-icons/faBuilding';
-import * as faPhone from '@fortawesome/free-solid-svg-icons/faPhone'
-import * as faMailBulk from '@fortawesome/free-solid-svg-icons/faMailBulk'
+import Phone from "@material-ui/icons/Phone";
+import Mail from "@material-ui/icons/Mail";
+import Room from "@material-ui/icons/Room";
 import withRoot from "../withRoot";
 
 const styles = (theme: Theme) =>
@@ -46,7 +45,7 @@ class YBNavbar extends React.Component<WithStyles<typeof styles>, IState> {
             color="textSecondary"
             component="p"
           >
-            <FontAwesomeIcon icon={faPhone} /> - 13901840320
+            <Phone /> - 13901840320
           </Typography>
           <Typography
             variant="subtitle1"
@@ -54,7 +53,7 @@ class YBNavbar extends React.Component<WithStyles<typeof styles>, IState> {
             color="textSecondary"
             component="p"
           >
-            <FontAwesomeIcon icon={faMailBulk} /> - yubaidz@163.com
+            <Mail /> - yubaidz@163.com
           </Typography>
           <Typography
             variant="subtitle1"
@@ -62,7 +61,7 @@ class YBNavbar extends React.Component<WithStyles<typeof styles>, IState> {
             color="textSecondary"
             component="p"
           >
-            <FontAwesomeIcon icon={faBuilding} /> - 上海宝山区共和新路4965号4号楼1309室
+            <Room /> - 上海宝山区共和新路4965号4号楼1309室
           </Typography>
         </footer>
         {/* End footer */}

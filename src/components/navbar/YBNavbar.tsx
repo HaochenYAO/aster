@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Link } from "react-router-dom";
 import AppBar from "@material-ui/core/AppBar";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Button from "@material-ui/core/Button";
@@ -29,6 +30,11 @@ const styles = (theme: Theme) =>
       justifyContent: "space-between"
     },
     menuButton: {
+      color: "black",
+      "font-weight": 600,
+      "font-size": "15px"
+    },
+    navButton: {
       color: "white",
       "font-weight": 600,
       "font-size": "15px"
@@ -85,17 +91,33 @@ class YBNavbar extends React.Component<WithStyles<typeof styles>, IState> {
               open={open}
               onClose={this.handleClose}
             >
-              <MenuItem onClick={this.handleClose}>首页</MenuItem>
-              <MenuItem onClick={this.handleClose}>产品</MenuItem>
-              <MenuItem onClick={this.handleClose}>企业介绍</MenuItem>
-              <MenuItem onClick={this.handleClose}>资料下载</MenuItem>
+              <MenuItem>
+                <Link to="/welcome" style={{ textDecoration: "none" }}>
+                  <span className={classes.menuButton}>首页</span>
+                </Link>
+              </MenuItem>
+              <MenuItem>
+                <Link to="/product" style={{ textDecoration: "none" }}>
+                  <span className={classes.menuButton}>产品</span>
+                </Link>
+              </MenuItem>
+              <MenuItem>
+                <span className={classes.menuButton}>企业介绍</span>
+              </MenuItem>
+              <MenuItem>
+                <span className={classes.menuButton}>资料下载</span>
+              </MenuItem>
             </Menu>
 
             <div className="menuItem">
-              <Button className={classes.menuButton}>首页</Button>
-              <Button className={classes.menuButton}>产品</Button>
-              <Button className={classes.menuButton}>企业介绍</Button>
-              <Button className={classes.menuButton}>资料下载</Button>
+              <Link to="/welcome" style={{ textDecoration: "none" }}>
+                <Button className={classes.navButton}>首页</Button>
+              </Link>
+              <Link to="/product" style={{ textDecoration: "none" }}>
+                <Button className={classes.navButton}>产品</Button>
+              </Link>
+              <Button className={classes.navButton}>企业介绍</Button>
+              <Button className={classes.navButton}>资料下载</Button>
             </div>
           </Toolbar>
         </AppBar>

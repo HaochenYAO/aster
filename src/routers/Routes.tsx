@@ -5,6 +5,7 @@ import {
 } from 'react-router-dom';
 
 import Welcome from '../containers/WelcomeApp/Welcome';
+import Product from '../containers/ProductApp/Product';
 
 export const routes = [
   {
@@ -12,6 +13,18 @@ export const routes = [
     component: Welcome,
     exact: true,
     pageName: 'WelcomeApp',
+  },
+  {
+    path: '/welcome',
+    component: Welcome,
+    exact: true,
+    pageName: 'WelcomeApp',
+  },
+  {
+    path: '/product',
+    component: Product,
+    exact: true,
+    pageName: 'ProductApp',
   },
 ];
 const Routes = () => (
