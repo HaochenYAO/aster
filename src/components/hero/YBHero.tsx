@@ -6,7 +6,7 @@ import Typography from "@material-ui/core/Typography";
 import { Theme } from "@material-ui/core/styles/createMuiTheme";
 import createStyles from "@material-ui/core/styles/createStyles";
 import withStyles, { WithStyles } from "@material-ui/core/styles/withStyles";
-import withRoot from "../withRoot";
+import withRoot from "../../withRoot";
 
 const styles = (theme: Theme) =>
   createStyles({

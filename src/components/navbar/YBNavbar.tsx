@@ -18,7 +18,6 @@ import "./YBNavbar.css";
 const styles = (theme: Theme) =>
   createStyles({
     appBar: {
-      position: "relative",
       background: "url(/img/banner.png)"
     },
     icon: {
@@ -66,7 +65,7 @@ class YBNavbar extends React.Component<WithStyles<typeof styles>, IState> {
     return (
       <React.Fragment>
         <CssBaseline />
-        <AppBar position="static" className={classes.appBar}>
+        <AppBar position="sticky" className={classes.appBar}>
           <Toolbar className={classes.toolbar}>
             <IconButton
               aria-owns={open ? "menu-appbar" : undefined}

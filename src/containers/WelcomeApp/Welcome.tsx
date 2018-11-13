@@ -3,9 +3,9 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 
 import YBNavbar from "../../components/navbar/YBNavbar";
-import YBHero from "../../components/YBHero";
-import YBCardLayout from "../../components/YBCardLayout";
-import YBFooter from "../../components/YBFooter";
+import YBHero from "../../components/hero/YBHero";
+import YBCardLayout from "../../components/cardLayout/YBCardLayout";
+import YBFooter from "../../components/footer/YBFooter";
 
 import { MCard } from "../../models/MCard";
 import { MHyper } from "../../models/MHyper";

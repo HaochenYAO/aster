@@ -7,7 +7,7 @@ import withStyles, { WithStyles } from "@material-ui/core/styles/withStyles";
 import Phone from "@material-ui/icons/Phone";
 import Mail from "@material-ui/icons/Mail";
 import Room from "@material-ui/icons/Room";
-import withRoot from "../withRoot";
+import withRoot from "../../withRoot";
 
 const styles = (theme: Theme) =>
   createStyles({

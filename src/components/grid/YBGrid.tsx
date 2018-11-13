@@ -1,14 +1,11 @@
 import * as React from "react";
-import * as classNames from 'classnames';
+import classNames from "classnames";
 import CssBaseline from "@material-ui/core/CssBaseline";
+import Grid from "@material-ui/core/Grid";
 import { Theme } from "@material-ui/core/styles/createMuiTheme";
 import createStyles from "@material-ui/core/styles/createStyles";
 import withStyles, { WithStyles } from "@material-ui/core/styles/withStyles";
-import withRoot from "../withRoot";
-import Grid from '@material-ui/core/Grid';
-import { MCard} from '../models/MCard';
-import YBCard from './YBCard';
-
+import withRoot from "../../withRoot";
 
 const styles = (theme: Theme) =>
   createStyles({
@@ -27,31 +24,26 @@ const styles = (theme: Theme) =>
     },
   });
 
+const cards = [1, 2, 3];
+
 interface IState {
   open: boolean;
 }
 
-interface IProps extends WithStyles<typeof styles> {
-  cards: MCard[];
-}
-
-class YBCardLayout extends React.Component<IProps, IState> {
+class YBGrid extends React.Component<WithStyles<typeof styles>, IState> {
   public state = {
     open: false
   };
 
   public render() {
-    const { classes, cards } = this.props;
+    const { classes } = this.props;
     return (
       <React.Fragment>
         <CssBaseline />
         <div className={classNames(classes.layout, classes.cardGrid)}>
-          {/* End hero unit */}
           <Grid container={true} spacing={40}>
             {cards.map(card => (
-              <Grid item={true} key={card.id} sm={6} md={4} lg={3}>
-                <YBCard card={card} />
-              </Grid>
+              <Grid item={true} key={card} sm={6} md={4} lg={3} />
             ))}
           </Grid>
         </div>
@@ -60,4 +52,4 @@ class YBCardLayout extends React.Component<IProps, IState> {
   }
 }
 
-export default withRoot(withStyles(styles)(YBCardLayout));
+export default withRoot(withStyles(styles)(YBGrid));
