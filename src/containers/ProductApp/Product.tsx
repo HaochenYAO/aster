@@ -1,10 +1,10 @@
 import * as React from "react";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import Divider from '@material-ui/core/Divider';
-import { WithStyles, createStyles, withStyles } from '@material-ui/core';
+import createStyles from "@material-ui/core/styles/createStyles";
+import withStyles, { WithStyles } from "@material-ui/core/styles/withStyles";
 import { Theme } from "@material-ui/core/styles/createMuiTheme";
 
 import YBNavbar from "../../components/navbar/YBNavbar";
