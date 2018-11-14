@@ -4,21 +4,21 @@ import Typography from "@material-ui/core/Typography";
 import { Theme } from "@material-ui/core/styles/createMuiTheme";
 import createStyles from "@material-ui/core/styles/createStyles";
 import withStyles, { WithStyles } from "@material-ui/core/styles/withStyles";
-import Phone from "@material-ui/icons/Phone";
-import Mail from "@material-ui/icons/Mail";
-import Room from "@material-ui/icons/Room";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBuilding } from "@fortawesome/free-solid-svg-icons/faBuilding";
+import { faPhone } from "@fortawesome/free-solid-svg-icons/faPhone";
+import { faMailBulk } from "@fortawesome/free-solid-svg-icons/faMailBulk";
 import withRoot from "../../withRoot";
 
 const styles = (theme: Theme) =>
   createStyles({
     footer: {
       backgroundColor: theme.palette.background.paper,
-      'padding-left': theme.spacing.unit * 6,
-      'padding-top': theme.spacing.unit * 2,
-      'padding-bottom': theme.spacing.unit * 2,
+      "padding-left": theme.spacing.unit * 6,
+      "padding-top": theme.spacing.unit * 2,
+      "padding-bottom": theme.spacing.unit * 2
     }
   });
-
 
 interface IState {
   open: boolean;
@@ -45,7 +45,8 @@ class YBNavbar extends React.Component<WithStyles<typeof styles>, IState> {
             color="textSecondary"
             component="p"
           >
-            <Phone /> - 13901840320
+            <FontAwesomeIcon icon={faPhone} />
+            <span> - 13901840320</span>
           </Typography>
           <Typography
             variant="subtitle1"
@@ -53,7 +54,8 @@ class YBNavbar extends React.Component<WithStyles<typeof styles>, IState> {
             color="textSecondary"
             component="p"
           >
-            <Mail /> - yubaidz@163.com
+            <FontAwesomeIcon icon={faMailBulk} />
+            <span> - yubaidz@163.com</span>
           </Typography>
           <Typography
             variant="subtitle1"
@@ -61,7 +63,8 @@ class YBNavbar extends React.Component<WithStyles<typeof styles>, IState> {
             color="textSecondary"
             component="p"
           >
-            <Room /> - 上海宝山区共和新路4965号4号楼1309室
+            <FontAwesomeIcon icon={faBuilding} />
+            <span> - 上海宝山区共和新路4965号4号楼1309室</span>
           </Typography>
         </footer>
         {/* End footer */}
