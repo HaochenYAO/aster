@@ -23,15 +23,15 @@ class Welcome extends React.Component {
         <YBHero />
         <Carousel transitionTime={500} infiniteLoop={true} autoPlay={true}>
           <div>
-            <img src="/img/carousel/1.jpg" />
+            <img src="/img/lcd.jpg" />
             <p className="legend">LA</p>
           </div>
           <div>
-            <img src="/img/carousel/2.jpg" />
+            <img src="/img/lcd.jpg" />
             <p className="legend">Chicago</p>
           </div>
           <div>
-            <img src="/img/carousel/3.jpg" />
+            <img src="/img/lcd.jpg" />
             <p className="legend">NY</p>
           </div>
         </Carousel>
