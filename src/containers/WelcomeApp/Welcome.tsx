@@ -23,16 +23,16 @@ class Welcome extends React.Component {
         <YBHero />
         <Carousel transitionTime={500} infiniteLoop={true} autoPlay={true}>
           <div>
-            <img src="/img/lcd.jpg" />
-            <p className="legend">LA</p>
+            <img src="/img/product/WechatIMG1.jpeg" />
+            <p className="legend">家用健身器显示屏</p>
           </div>
           <div>
-            <img src="/img/lcd.jpg" />
-            <p className="legend">Chicago</p>
+            <img src="/img/product/WechatIMG2.jpeg" />
+            <p className="legend">代步电动汽车显示屏</p>
           </div>
           <div>
-            <img src="/img/lcd.jpg" />
-            <p className="legend">NY</p>
+            <img src="/img/product/WechatIMG3.jpeg" />
+            <p className="legend">艾玛电动车</p>
           </div>
         </Carousel>
         <YBCardLayout cards={cards}/>

@@ -49,14 +49,6 @@ class YBNavbar extends React.Component<WithStyles<typeof styles>, IState> {
     anchorEl: null
   };
 
-  public handleMenu = (event: any) => {
-    this.setState({ anchorEl: event.currentTarget });
-  };
-
-  public handleClose = () => {
-    this.setState({ anchorEl: null });
-  };
-
   public render() {
     const { classes } = this.props;
     const { anchorEl } = this.state;
@@ -123,6 +115,14 @@ class YBNavbar extends React.Component<WithStyles<typeof styles>, IState> {
       </React.Fragment>
     );
   }
+
+  private handleMenu = (event: any) => {
+    this.setState({ anchorEl: event.currentTarget });
+  };
+
+  private handleClose = () => {
+    this.setState({ anchorEl: null });
+  };
 }
 
 export default withRoot(withStyles(styles)(YBNavbar));
