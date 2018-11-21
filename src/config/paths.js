@@ -11,14 +11,14 @@ const resolveApp = relativePath => path.resolve(appDirectory, relativePath);
 
 const envPublicUrl = process.env.PUBLIC_URL;
 
-function ensureSlash(path, needsSlash) {
-  const hasSlash = path.endsWith('/');
+function ensureSlash(p, needsSlash) {
+  const hasSlash = p.endsWith('/');
   if (hasSlash && !needsSlash) {
-    return path.substr(path, path.length - 1);
+    return p.substr(p, p.length - 1);
   } else if (!hasSlash && needsSlash) {
-    return `${path}/`;
+    return `${p}/`;
   } else {
-    return path;
+    return p;
   }
 }
 
@@ -40,19 +40,19 @@ function getServedPath(appPackageJson) {
 
 // config after eject: we're in ./config/
 module.exports = {
-  dotenv: resolveApp('.env'),
   appBuild: resolveApp('build'),
-  appPublic: resolveApp('public'),
   appHtml: resolveApp('public/index.html'),
   appIndexJs: resolveApp('src/index.tsx'),
-  appPackageJson: resolveApp('package.json'),
-  appSrc: resolveApp('src'),
-  yarnLockFile: resolveApp('yarn.lock'),
-  testsSetup: resolveApp('src/setupTests.ts'),
   appNodeModules: resolveApp('node_modules'),
+  appPackageJson: resolveApp('package.json'),
+  appPublic: resolveApp('public'),
+  appSrc: resolveApp('src'),
   appTsConfig: resolveApp('tsconfig.json'),
-  appTsProdConfig: resolveApp('tsconfig.prod.json'),
   appTsLint: resolveApp('tslint.json'),
+  appTsProdConfig: resolveApp('tsconfig.prod.json'),
+  dotenv: resolveApp('.env'),
   publicUrl: getPublicUrl(resolveApp('package.json')),
   servedPath: getServedPath(resolveApp('package.json')),
+  testsSetup: resolveApp('src/setupTests.ts'),
+  yarnLockFile: resolveApp('yarn.lock'),
 };
