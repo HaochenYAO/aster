@@ -26,8 +26,12 @@ class Product extends React.Component<WithStyles<typeof styles>> {
       <React.Fragment>
         <YBNavbar />
         <YBTabs>
+        <React.Suspense fallback={<div>Loading...</div>}>
           <YBProductList products={this.productsCrystal}/>
+          </React.Suspense>
+        <React.Suspense fallback={<div>Loading...</div>}>
           <YBProductList products={[]}/>
+          </React.Suspense>
         </YBTabs>
         <YBFooter />
       </React.Fragment>
