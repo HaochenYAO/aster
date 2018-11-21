@@ -9,7 +9,7 @@ import Typography from "@material-ui/core/Typography";
 import { Theme } from "@material-ui/core/styles/createMuiTheme";
 import createStyles from "@material-ui/core/styles/createStyles";
 import withStyles, { WithStyles } from "@material-ui/core/styles/withStyles";
-import withRoot from "../../withRoot";
+
 import { MCard } from "src/models/MCard";
 
 const styles = (theme: Theme) =>
@@ -74,4 +74,4 @@ class YBCard extends React.Component<IProps, IState> {
   }
 }
 
-export default withRoot(withStyles(styles)(YBCard));
+export default withStyles(styles)(YBCard);

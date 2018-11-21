@@ -11,6 +11,8 @@ import withRoot from "src/withRoot";
 import withNavbar from 'src/withNavbar';
 import withFooter from 'src/withFooter';
 
+import crystal from "src/data/crystal";
+
 const styles = (theme: Theme) =>
   createStyles({
     root: {
@@ -18,7 +20,6 @@ const styles = (theme: Theme) =>
       padding: theme.spacing.unit * 2,
     },
     image: {
-      width: 548,
     },
     img: {
       margin: "auto",
@@ -31,35 +32,42 @@ const styles = (theme: Theme) =>
     }
   });
 
-class ProductDetail extends React.Component<WithStyles<typeof styles>> {
+
+interface IProps extends WithStyles<typeof styles> {
+  match: { params: { id: string }};
+}
+
+
+class ProductDetail extends React.Component<IProps> {
   public render() {
-    const { classes } = this.props;
+    const { classes, match } = this.props;
+    const productInfo: {id: number, name: string, detail: string, img: string} = this.getProductDetail(match.params.id);
 
     return (
       <React.Fragment>
         <Paper className={classes.root}>
-          <Grid container={true} spacing={16}>
-            <Grid item={true}>
+          <Grid container={true} spacing={24}>
+            <Grid item={true} xs={6} md={6} sm={12}>
               <ButtonBase className={classes.image}>
                 <img
                   className={classes.img}
                   alt="complex"
-                  src="/img/product/WechatIMG1.jpeg"
+                  src={productInfo.img}
                 />
               </ButtonBase>
             </Grid>
-            <Grid item={true} xs={12} sm={true} container={true}>
-              <Grid item={true} xs={true} container={true} direction="column" spacing={16}>
+            <Grid item={true} xs={6} md={6} sm={12} container={true}>
+              <Grid item={true} container={true} direction="column" spacing={16}>
                 <Grid item={true} xs={true}>
                   <Typography className={classes.title} gutterBottom={true} variant="subtitle1">
-                    家用健身器显示屏
+                    {productInfo.name}
                   </Typography>
                   <Typography gutterBottom={true}>
-                    VA 负显, 二色彩显
+                    {productInfo.detail}
                   </Typography>
                   <Typography color="textSecondary">型号: zzzzzzz</Typography>
                   <Typography>
-                    家用健身器显示屏: 介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍
+                    介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍
                   </Typography>
                 </Grid>
                 <Grid item={true}>
@@ -71,6 +79,22 @@ class ProductDetail extends React.Component<WithStyles<typeof styles>> {
         </Paper>
       </React.Fragment>
     );
+  }
+
+  private getProductDetail (id: string): {id: number, name: string, detail: string, img: string} {
+    for (const product of crystal) {
+      // tslint:disable-next-line:no-console 
+      console.log(product);
+      if (product.id.toString() === id) {
+        return product;
+      }
+    }
+    return {
+      id: -1,
+      name: '',
+      detail: '',
+      img: ''
+    };
   }
 }
 

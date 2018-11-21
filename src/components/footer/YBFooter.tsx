@@ -8,7 +8,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBuilding } from "@fortawesome/free-solid-svg-icons/faBuilding";
 import { faPhone } from "@fortawesome/free-solid-svg-icons/faPhone";
 import { faMailBulk } from "@fortawesome/free-solid-svg-icons/faMailBulk";
-import withRoot from "../../withRoot";
 
 const styles = (theme: Theme) =>
   createStyles({
@@ -73,4 +72,4 @@ class YBNavbar extends React.Component<WithStyles<typeof styles>, IState> {
   }
 }
 
-export default withRoot(withStyles(styles)(YBNavbar));
+export default withStyles(styles)(YBNavbar);

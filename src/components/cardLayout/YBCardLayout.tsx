@@ -4,7 +4,7 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import { Theme } from "@material-ui/core/styles/createMuiTheme";
 import createStyles from "@material-ui/core/styles/createStyles";
 import withStyles, { WithStyles } from "@material-ui/core/styles/withStyles";
-import withRoot from "../../withRoot";
+
 import Grid from '@material-ui/core/Grid';
 import { MCard} from '../../models/MCard';
 import YBCard from '../card/YBCard';
@@ -60,4 +60,4 @@ class YBCardLayout extends React.Component<IProps, IState> {
   }
 }
 
-export default withRoot(withStyles(styles)(YBCardLayout));
+export default withStyles(styles)(YBCardLayout);

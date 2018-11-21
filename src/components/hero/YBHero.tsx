@@ -6,7 +6,6 @@ import Typography from "@material-ui/core/Typography";
 import { Theme } from "@material-ui/core/styles/createMuiTheme";
 import createStyles from "@material-ui/core/styles/createStyles";
 import withStyles, { WithStyles } from "@material-ui/core/styles/withStyles";
-import withRoot from "../../withRoot";
 
 const styles = (theme: Theme) =>
   createStyles({
@@ -96,4 +95,4 @@ class YBHero extends React.Component<WithStyles<typeof styles>, IState> {
   }
 }
 
-export default withRoot(withStyles(styles)(YBHero));
+export default withStyles(styles)(YBHero);

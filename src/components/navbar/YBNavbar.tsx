@@ -12,7 +12,7 @@ import List from "@material-ui/icons/List";
 import { Theme } from "@material-ui/core/styles/createMuiTheme";
 import createStyles from "@material-ui/core/styles/createStyles";
 import withStyles, { WithStyles } from "@material-ui/core/styles/withStyles";
-import withRoot from "../../withRoot";
+
 import "./YBNavbar.css";
 
 const styles = (theme: Theme) =>
@@ -88,7 +88,7 @@ class YBNavbar extends React.Component<WithStyles<typeof styles>, IState> {
                 </Link>
               </MenuItem>
               <MenuItem>
-                <Link to="/product" style={{ textDecoration: "none" }}>
+                <Link to="/product/list" style={{ textDecoration: "none" }}>
                   <span className={classes.menuButton}>产品</span>
                 </Link>
               </MenuItem>
@@ -104,7 +104,7 @@ class YBNavbar extends React.Component<WithStyles<typeof styles>, IState> {
               <Link to="/welcome" style={{ textDecoration: "none" }}>
                 <Button className={classes.navButton}>首页</Button>
               </Link>
-              <Link to="/product" style={{ textDecoration: "none" }}>
+              <Link to="/product/list" style={{ textDecoration: "none" }}>
                 <Button className={classes.navButton}>产品</Button>
               </Link>
               <Button className={classes.navButton}>企业介绍</Button>
@@ -125,4 +125,4 @@ class YBNavbar extends React.Component<WithStyles<typeof styles>, IState> {
   };
 }
 
-export default withRoot(withStyles(styles)(YBNavbar));
+export default withStyles(styles)(YBNavbar);

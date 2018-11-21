@@ -1,5 +1,6 @@
 import * as React from "react";
 import YBFooter from './components/footer/YBFooter';
+import Divider from '@material-ui/core/Divider';
 
 function withFooter<P>(Component: React.ComponentType<P>) {
   function WithFooter(props: P) {
@@ -8,6 +9,7 @@ function withFooter<P>(Component: React.ComponentType<P>) {
     return (
       <React.Fragment>
         <Component {...props} />
+        <Divider />
         <YBFooter />
       </React.Fragment>
     );
