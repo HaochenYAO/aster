@@ -5,7 +5,8 @@ import {
 } from 'react-router-dom';
 
 import Welcome from 'src/containers/WelcomeApp/Welcome';
-import Product from 'src/containers/ProductApp/Product';
+import Product from 'src/containers/ProductApp/ListApp/Product';
+import ProductDetail from 'src/containers/ProductApp/DetailApp/ProductDetail';
 
 export const routes = [
   {
@@ -25,6 +26,12 @@ export const routes = [
     component: Product,
     exact: true,
     pageName: 'ProductApp',
+  },
+  {
+    path: '/productDetail',
+    component: ProductDetail,
+    exact: true,
+    pageName: 'ProductDetailApp',
   },
 ];
 const Routes = () => (

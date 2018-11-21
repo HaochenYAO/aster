@@ -1,15 +1,25 @@
 import * as React from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import createStyles from "@material-ui/core/styles/createStyles";
+import withStyles, { WithStyles } from "@material-ui/core/styles/withStyles";
+import { Theme } from "@material-ui/core/styles/createMuiTheme";
 import { Carousel } from 'react-responsive-carousel';
-import YBNavbar from "../../components/navbar/YBNavbar";
+
 const YBHero = React.lazy(() => import('src/components/hero/YBHero'));
 const YBCardLayout = React.lazy(() => import('src/components/cardLayout/YBCardLayout'));
-import YBFooter from "../../components/footer/YBFooter";
+
+import withRoot from "src/withRoot";
+import withNavbar from 'src/withNavbar';
+import withFooter from 'src/withFooter';
 
 import { MCard } from "../../models/MCard";
 import { MHyper } from "../../models/MHyper";
 
-class Welcome extends React.Component {
+const styles = (theme: Theme) =>
+  createStyles({
+  });
+
+class Welcome extends React.Component<WithStyles<typeof styles>> {
   public render() {
     const cardPile = new MCard(1, '/img/pile.jpg', '电池', '喻柏电池', new MHyper('目录', ''), new MHyper('文档', ''), 'test');
     const cardLCD = new MCard(2, '/img/lcd.jpg', '液晶', '喻柏液晶', new MHyper('目录', ''), new MHyper('文档', ''), 'test');
@@ -18,7 +28,6 @@ class Welcome extends React.Component {
     cards.push(cardPile, cardLCD, cardOther);
     return (
       <React.Fragment>
-        <YBNavbar />
         <React.Suspense fallback={<div>Loading...</div>}>
         <YBHero />
         </React.Suspense>
@@ -39,10 +48,9 @@ class Welcome extends React.Component {
         <React.Suspense fallback={<div>Loading...</div>}>
         <YBCardLayout cards={cards}/>
         </React.Suspense>
-        <YBFooter />
       </React.Fragment>
     );
   }
 }
 
-export default Welcome;
+export default withRoot(withStyles(styles)(withFooter(withNavbar(Welcome))));;
