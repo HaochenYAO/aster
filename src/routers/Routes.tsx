@@ -4,8 +4,8 @@ import {
   Switch,
 } from 'react-router-dom';
 
-import Welcome from '../containers/WelcomeApp/Welcome';
-import Product from '../containers/ProductApp/Product';
+import Welcome from 'src/containers/WelcomeApp/Welcome';
+import Product from 'src/containers/ProductApp/Product';
 
 export const routes = [
   {

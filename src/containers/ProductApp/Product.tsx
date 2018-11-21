@@ -7,8 +7,9 @@ import YBNavbar from "src/components/navbar/YBNavbar";
 import YBFooter from "src/components/footer/YBFooter";
 import withRoot from "src/withRoot";
 import YBTabs from "src/components/tabs/YBTabs";
-import YBProductList from "src/components/list/YBProductList";
 import crystal from "src/data/crystal";
+
+const YBProductList = React.lazy(() => import('src/components/list/YBProductList'));
 
 const styles = (theme: Theme) =>
   createStyles({

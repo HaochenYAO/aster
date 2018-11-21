@@ -1,10 +1,9 @@
 import * as React from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
-
 import YBNavbar from "../../components/navbar/YBNavbar";
-import YBHero from "../../components/hero/YBHero";
-import YBCardLayout from "../../components/cardLayout/YBCardLayout";
+const YBHero = React.lazy(() => import('src/components/hero/YBHero'));
+const YBCardLayout = React.lazy(() => import('src/components/cardLayout/YBCardLayout'));
 import YBFooter from "../../components/footer/YBFooter";
 
 import { MCard } from "../../models/MCard";
@@ -20,7 +19,9 @@ class Welcome extends React.Component {
     return (
       <React.Fragment>
         <YBNavbar />
+        <React.Suspense fallback={<div>Loading...</div>}>
         <YBHero />
+        </React.Suspense>
         <Carousel transitionTime={500} infiniteLoop={true} autoPlay={true}>
           <div>
             <img src="/img/product/WechatIMG1.jpeg" />
@@ -35,7 +36,9 @@ class Welcome extends React.Component {
             <p className="legend">艾玛电动车</p>
           </div>
         </Carousel>
+        <React.Suspense fallback={<div>Loading...</div>}>
         <YBCardLayout cards={cards}/>
+        </React.Suspense>
         <YBFooter />
       </React.Fragment>
     );
