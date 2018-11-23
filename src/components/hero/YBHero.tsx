@@ -9,6 +9,10 @@ import withStyles, { WithStyles } from "@material-ui/core/styles/withStyles";
 
 const styles = (theme: Theme) =>
   createStyles({
+    heroSubtitle: {
+      marginLeft: theme.spacing.unit * 3,
+      marginRight: theme.spacing.unit * 3,
+    },
     heroUnit: {
       backgroundColor: theme.palette.background.paper
     },
@@ -60,6 +64,7 @@ class YBHero extends React.Component<WithStyles<typeof styles>, IState> {
                 喻柏电子科技有限公司
               </Typography>
               <Typography
+                className={classes.heroSubtitle}
                 variant="subtitle2"
                 align="left"
                 color="textPrimary"
