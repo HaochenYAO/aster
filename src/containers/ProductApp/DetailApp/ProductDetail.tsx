@@ -47,7 +47,7 @@ class ProductDetail extends React.Component<IProps> {
       <React.Fragment>
         <Paper className={classes.root}>
           <Grid container={true} spacing={24}>
-            <Grid item={true} xs={6} md={6} sm={12}>
+            <Grid item={true} xs={12} md={6} sm={12}>
               <ButtonBase className={classes.image}>
                 <img
                   className={classes.img}
@@ -83,8 +83,6 @@ class ProductDetail extends React.Component<IProps> {
 
   private getProductDetail (id: string): {id: number, name: string, detail: string, img: string} {
     for (const product of crystal) {
-      // tslint:disable-next-line:no-console 
-      console.log(product);
       if (product.id.toString() === id) {
         return product;
       }

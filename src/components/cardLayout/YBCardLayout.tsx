@@ -46,7 +46,6 @@ class YBCardLayout extends React.Component<IProps, IState> {
       <React.Fragment>
         <CssBaseline />
         <div className={classNames(classes.layout, classes.cardGrid)}>
-          {/* End hero unit */}
           <Grid container={true} spacing={40}>
             {cards.map(card => (
               <Grid item={true} key={card.id} sm={6} md={4} lg={3}>

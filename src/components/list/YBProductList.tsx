@@ -7,7 +7,6 @@ import createStyles from "@material-ui/core/styles/createStyles";
 import withStyles, { WithStyles } from "@material-ui/core/styles/withStyles";
 import { Theme } from "@material-ui/core/styles/createMuiTheme";
 
-
 const styles = (theme: Theme) =>
   createStyles({
     listImg: {
@@ -30,27 +29,30 @@ class YBProductList extends React.Component<IProps> {
 
     return (
       <React.Fragment>
-        <div className="List">
-          <List component="nav">
-            {products.map((product, index) => {
-              const elements = [
-                <ListItem key={`item_${product.id}`} button={true} component="a" href={`/product/detail/${product.id}`}>
-                  <img className={classes.listImg} src={product.img} />
-                  <ListItemText
-                    inset={true}
-                    primary={product.name}
-                    secondary={product.detail}
-                  />
-                </ListItem>
-              ];
+        <List component="nav">
+          {products.map((product, index) => {
+            const elements = [
+              <ListItem
+                key={`item_${product.id}`}
+                button={true}
+                component="a"
+                href={`/product/detail/${product.id}`}
+              >
+                <img className={classes.listImg} src={product.img} />
+                <ListItemText
+                  inset={true}
+                  primary={product.name}
+                  secondary={product.detail}
+                />
+              </ListItem>
+            ];
 
-              if (index !== products.length - 1) {
-                elements.push(<Divider key={`divider_${product.id}`} />);
-              }
-              return elements;
-            })}
-          </List>
-        </div>
+            if (index !== products.length - 1) {
+              elements.push(<Divider key={`divider_${product.id}`} />);
+            }
+            return elements;
+          })}
+        </List>
       </React.Fragment>
     );
   }
