@@ -33,15 +33,15 @@ class Welcome extends React.Component<WithStyles<typeof styles>> {
         </React.Suspense>
         <Carousel transitionTime={500} infiniteLoop={true} autoPlay={true}>
           <div>
-            <img src="/img/product/WechatIMG1.jpeg" />
+            <img src="/img/product/crystal/WechatIMG1.jpeg" />
             <p className="legend">家用健身器显示屏</p>
           </div>
           <div>
-            <img src="/img/product/WechatIMG2.jpeg" />
+            <img src="/img/product/crystal/WechatIMG2.jpeg" />
             <p className="legend">代步电动汽车显示屏</p>
           </div>
           <div>
-            <img src="/img/product/WechatIMG3.jpeg" />
+            <img src="/img/product/crystal/WechatIMG3.jpeg" />
             <p className="legend">艾玛电动车</p>
           </div>
         </Carousel>

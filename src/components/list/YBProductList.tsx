@@ -16,7 +16,7 @@ const styles = (theme: Theme) =>
 
 interface IProps extends WithStyles<typeof styles> {
   products: Array<{
-    id: number;
+    id: string;
     img: string;
     name: string;
     detail: string;

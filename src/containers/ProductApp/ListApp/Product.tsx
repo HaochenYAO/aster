@@ -9,6 +9,7 @@ import withRoot from "src/withRoot";
 import withNavbar from 'src/withNavbar';
 import withFooter from 'src/withFooter';
 import crystal from "src/data/crystal";
+import pile from "src/data/pile";
 
 const YBProductList = React.lazy(() =>
   import("src/components/list/YBProductList")
@@ -23,6 +24,7 @@ const styles = (theme: Theme) =>
 
 class Product extends React.Component<WithStyles<typeof styles>> {
   private productsCrystal = crystal;
+  private productsPile = pile;
 
   public render() {
     return (
@@ -32,7 +34,7 @@ class Product extends React.Component<WithStyles<typeof styles>> {
             <YBProductList products={this.productsCrystal} />
           </React.Suspense>
           <React.Suspense fallback={<div>Loading...</div>}>
-            <YBProductList products={[]} />
+            <YBProductList products={this.productsPile} />
           </React.Suspense>
         </YBTabs>
       </React.Fragment>

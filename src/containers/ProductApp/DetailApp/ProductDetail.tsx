@@ -12,6 +12,7 @@ import withNavbar from 'src/withNavbar';
 import withFooter from 'src/withFooter';
 
 import crystal from "src/data/crystal";
+import pile from "src/data/pile";
 
 const styles = (theme: Theme) =>
   createStyles({
@@ -41,7 +42,7 @@ interface IProps extends WithStyles<typeof styles> {
 class ProductDetail extends React.Component<IProps> {
   public render() {
     const { classes, match } = this.props;
-    const productInfo: {id: number, name: string, detail: string, img: string} = this.getProductDetail(match.params.id);
+    const productInfo: {id: string, name: string, detail: string, img: string} = this.getProductDetail(match.params.id);
 
     return (
       <React.Fragment>
@@ -81,14 +82,20 @@ class ProductDetail extends React.Component<IProps> {
     );
   }
 
-  private getProductDetail (id: string): {id: number, name: string, detail: string, img: string} {
+  private getProductDetail (id: string): {id: string, name: string, detail: string, img: string} {
     for (const product of crystal) {
-      if (product.id.toString() === id) {
+      if (product.id === id) {
+        return product;
+      }
+    }
+    
+    for (const product of pile) {
+      if (product.id === id) {
         return product;
       }
     }
     return {
-      id: -1,
+      id: "",
       name: '',
       detail: '',
       img: ''
