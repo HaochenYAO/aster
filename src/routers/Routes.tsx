@@ -22,7 +22,7 @@ export const routes = [
     pageName: 'WelcomeApp',
   },
   {
-    path: '/product/list',
+    path: '/product/list/:name',
     component: Product,
     exact: true,
     pageName: 'ProductApp',

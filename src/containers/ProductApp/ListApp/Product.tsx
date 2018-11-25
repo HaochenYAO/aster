@@ -4,16 +4,13 @@ import withStyles, { WithStyles } from "@material-ui/core/styles/withStyles";
 import { Theme } from "@material-ui/core/styles/createMuiTheme";
 
 import YBTabs from "src/components/tabs/YBTabs";
+import YBProductList from "src/components/list/YBProductList";
 
 import withRoot from "src/withRoot";
-import withNavbar from 'src/withNavbar';
-import withFooter from 'src/withFooter';
+import withNavbar from "src/withNavbar";
+import withFooter from "src/withFooter";
 import crystal from "src/data/crystal";
 import pile from "src/data/pile";
-
-const YBProductList = React.lazy(() =>
-  import("src/components/list/YBProductList")
-);
 
 const styles = (theme: Theme) =>
   createStyles({
@@ -22,14 +19,19 @@ const styles = (theme: Theme) =>
     }
   });
 
-class Product extends React.Component<WithStyles<typeof styles>> {
+interface IProps extends WithStyles<typeof styles> {
+  match: { params: { name: string } };
+}
+
+class Product extends React.Component<IProps> {
   private productsCrystal = crystal;
   private productsPile = pile;
 
   public render() {
+    const { match } = this.props;
     return (
       <React.Fragment>
-        <YBTabs>
+        <YBTabs name={ match.params.name }>
           <React.Suspense fallback={<div>Loading...</div>}>
             <YBProductList products={this.productsCrystal} />
           </React.Suspense>

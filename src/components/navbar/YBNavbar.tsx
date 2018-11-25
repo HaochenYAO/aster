@@ -88,7 +88,7 @@ class YBNavbar extends React.Component<WithStyles<typeof styles>, IState> {
                 </Link>
               </MenuItem>
               <MenuItem>
-                <Link to="/product/list" style={{ textDecoration: "none" }}>
+                <Link to="/product/list/crystal" style={{ textDecoration: "none" }}>
                   <span className={classes.menuButton}>产品</span>
                 </Link>
               </MenuItem>
@@ -104,7 +104,7 @@ class YBNavbar extends React.Component<WithStyles<typeof styles>, IState> {
               <Link to="/welcome" style={{ textDecoration: "none" }}>
                 <Button className={classes.navButton}>首页</Button>
               </Link>
-              <Link to="/product/list" style={{ textDecoration: "none" }}>
+              <Link to="/product/list/crystal" style={{ textDecoration: "none" }}>
                 <Button className={classes.navButton}>产品</Button>
               </Link>
               <Button className={classes.navButton}>企业介绍</Button>
