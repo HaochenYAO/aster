@@ -76,13 +76,13 @@ class YBTabs extends React.Component<IProps, IState> {
 
   private handleChange = (event: any, value: number) => {
     const { history } = this.props;
-    history.push(`/product/list/${this.getProductNameByIndex(value)}`);
+    history.replace(`/product/list/${this.getProductNameByIndex(value)}`);
     this.setState({ tab: value });
   };
 
   private handleChangeIndex = (index: number) => {
     const { history } = this.props;
-    history.push(`/product/list/${this.getProductNameByIndex(index)}`);
+    history.replace(`/product/list/${this.getProductNameByIndex(index)}`);
     this.setState({ tab: index });
   };
 
