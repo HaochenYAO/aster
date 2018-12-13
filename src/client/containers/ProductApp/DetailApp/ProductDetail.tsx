@@ -7,12 +7,12 @@ import Typography from "@material-ui/core/Typography";
 import withStyles, { WithStyles } from "@material-ui/core/styles/withStyles";
 import { Theme } from "@material-ui/core/styles/createMuiTheme";
 
-import withRoot from "src/withRoot";
-import withNavbar from 'src/withNavbar';
-import withFooter from 'src/withFooter';
+import withRoot from "src/client/withRoot";
+import withNavbar from 'src/client/withNavbar';
+import withFooter from 'src/client/withFooter';
 
-import crystal from "src/data/crystal";
-import pile from "src/data/pile";
+import crystal from "src/client/data/crystal";
+import pile from "src/client/data/pile";
 
 const styles = (theme: Theme) =>
   createStyles({

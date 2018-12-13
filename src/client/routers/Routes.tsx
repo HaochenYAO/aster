@@ -4,9 +4,10 @@ import {
   Switch,
 } from 'react-router-dom';
 
-import Welcome from 'src/containers/WelcomeApp/Welcome';
-import Product from 'src/containers/ProductApp/ListApp/Product';
-import ProductDetail from 'src/containers/ProductApp/DetailApp/ProductDetail';
+import Welcome from 'src/client/containers/WelcomeApp/Welcome';
+import Product from 'src/client/containers/ProductApp/ListApp/Product';
+import ProductDetail from 'src/client/containers/ProductApp/DetailApp/ProductDetail';
+import Test from 'src/client/containers/TestApp/Test';
 
 export const routes = [
   {
@@ -32,6 +33,12 @@ export const routes = [
     component: ProductDetail,
     exact: true,
     pageName: 'ProductDetailApp',
+  },
+  {
+    path: '/test',
+    component: Test,
+    exact: true,
+    pageName: 'Test',
   },
 ];
 const Routes = () => (

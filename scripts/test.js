@@ -13,7 +13,7 @@ process.on('unhandledRejection', err => {
 });
 
 // Ensure environment variables are read.
-require('../src/config/env');
+require('../src/client/config/env');
 
 const jest = require('jest');
 let argv = process.argv.slice(2);

@@ -1,5 +1,5 @@
 import * as React from "react";
-import YBNavbar from "src/components/navbar/YBNavbar";
+import YBNavbar from "src/client/components/navbar/YBNavbar";
 
 function withNavbar<P>(Component: React.ComponentType<P>) {
   function WithNavbar(props: P) {

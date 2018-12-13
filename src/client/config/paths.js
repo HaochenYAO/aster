@@ -42,7 +42,7 @@ function getServedPath(appPackageJson) {
 module.exports = {
   appBuild: resolveApp('build'),
   appHtml: resolveApp('public/index.html'),
-  appIndexJs: resolveApp('src/index.tsx'),
+  appIndexJs: resolveApp('src/client/index.tsx'),
   appNodeModules: resolveApp('node_modules'),
   appPackageJson: resolveApp('package.json'),
   appPublic: resolveApp('public'),
@@ -53,6 +53,6 @@ module.exports = {
   dotenv: resolveApp('.env'),
   publicUrl: getPublicUrl(resolveApp('package.json')),
   servedPath: getServedPath(resolveApp('package.json')),
-  testsSetup: resolveApp('src/setupTests.ts'),
+  testsSetup: resolveApp('src/client/setupTests.ts'),
   yarnLockFile: resolveApp('yarn.lock'),
 };

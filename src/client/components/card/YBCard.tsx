@@ -10,7 +10,7 @@ import { Theme } from "@material-ui/core/styles/createMuiTheme";
 import createStyles from "@material-ui/core/styles/createStyles";
 import withStyles, { WithStyles } from "@material-ui/core/styles/withStyles";
 
-import { MCard } from "src/models/MCard";
+import { MCard } from "src/client/models/MCard";
 
 const styles = (theme: Theme) =>
   createStyles({

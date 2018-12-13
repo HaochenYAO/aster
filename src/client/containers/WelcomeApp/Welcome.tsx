@@ -5,14 +5,14 @@ import withStyles, { WithStyles } from "@material-ui/core/styles/withStyles";
 import { Theme } from "@material-ui/core/styles/createMuiTheme";
 import { Carousel } from "react-responsive-carousel";
 
-const YBHero = React.lazy(() => import("src/components/hero/YBHero"));
+const YBHero = React.lazy(() => import("src/client/components/hero/YBHero"));
 const YBCardLayout = React.lazy(() =>
-  import("src/components/cardLayout/YBCardLayout")
+  import("src/client/components/cardLayout/YBCardLayout")
 );
 
-import withRoot from "src/withRoot";
-import withNavbar from "src/withNavbar";
-import withFooter from "src/withFooter";
+import withRoot from "src/client/withRoot";
+import withNavbar from "src/client/withNavbar";
+import withFooter from "src/client/withFooter";
 
 import { MCard } from "../../models/MCard";
 import { MHyper } from "../../models/MHyper";
