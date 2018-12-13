@@ -17,6 +17,9 @@ const styles = (theme: Theme) =>
       "padding-left": theme.spacing.unit * 6,
       "padding-top": theme.spacing.unit * 2,
       "padding-bottom": theme.spacing.unit * 2
+    },
+    footer_icon: {
+      width: 18
     }
   });
 
@@ -45,7 +48,7 @@ class YBNavbar extends React.Component<WithStyles<typeof styles>, IState> {
             color="textSecondary"
             component="p"
           >
-            <FontAwesomeIcon icon={faPhone} />
+            <FontAwesomeIcon size="1x" fixedWidth={true} icon={faPhone} />
             <span> - 13901840320</span>
           </Typography>
           <Typography
@@ -54,7 +57,7 @@ class YBNavbar extends React.Component<WithStyles<typeof styles>, IState> {
             color="textSecondary"
             component="p"
           >
-            <FontAwesomeIcon icon={faMailBulk} />
+            <FontAwesomeIcon size="1x" fixedWidth={true} icon={faMailBulk} />
             <span> - yubaidz@163.com</span>
           </Typography>
           <Typography
@@ -63,7 +66,7 @@ class YBNavbar extends React.Component<WithStyles<typeof styles>, IState> {
             color="textSecondary"
             component="p"
           >
-            <FontAwesomeIcon icon={faBuilding} />
+            <FontAwesomeIcon size="1x" fixedWidth={true} icon={faBuilding} />
             <span> - 上海宝山区共和新路4965号4号楼1309室</span>
           </Typography>
           <Typography
@@ -72,7 +75,7 @@ class YBNavbar extends React.Component<WithStyles<typeof styles>, IState> {
             color="textSecondary"
             component="p"
           >
-            <FontAwesomeIcon icon={faClipboardCheck} />
+            <FontAwesomeIcon size="1x" fixedWidth={true} icon={faClipboardCheck} />
             <span> - 沪ICP备18046626号-1</span>
           </Typography>
         </footer>
