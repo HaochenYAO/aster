@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBuilding } from "@fortawesome/free-solid-svg-icons/faBuilding";
 import { faPhone } from "@fortawesome/free-solid-svg-icons/faPhone";
 import { faMailBulk } from "@fortawesome/free-solid-svg-icons/faMailBulk";
+import { faClipboardCheck } from "@fortawesome/free-solid-svg-icons/faClipboardCheck";
 
 const styles = (theme: Theme) =>
   createStyles({
@@ -64,6 +65,15 @@ class YBNavbar extends React.Component<WithStyles<typeof styles>, IState> {
           >
             <FontAwesomeIcon icon={faBuilding} />
             <span> - 上海宝山区共和新路4965号4号楼1309室</span>
+          </Typography>
+          <Typography
+            variant="subtitle1"
+            align="left"
+            color="textSecondary"
+            component="p"
+          >
+            <FontAwesomeIcon icon={faClipboardCheck} />
+            <span> - 沪ICP备18046626号-1</span>
           </Typography>
         </footer>
         {/* End footer */}
